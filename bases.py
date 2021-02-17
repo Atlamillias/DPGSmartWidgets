@@ -4,6 +4,7 @@ from typing import Any, Callable
 
 
 class SmartObject:
+    """Base class for smartwidgets."""
     _func = None
 
     def __init__(self, name: str):
@@ -64,6 +65,8 @@ class SmartObject:
 
 
 class SmartProperty:
+    """Descriptor for smartwidget properties. Retrieves and 
+    updates properties in the value storage system."""
     def __set_name__(self, owner, name):
         self.name = name
 
@@ -74,6 +77,8 @@ class SmartProperty:
         return instance.__dict__.get(self.name)
 
     def __set__(self, instance, value):
+        # can pass SmartObject instead of SmartObject.name
+        # as arguments for other SmartObjects (i.e. parent, before, etc.)
         if isinstance(value, SmartObject):
             value = value.name
 
