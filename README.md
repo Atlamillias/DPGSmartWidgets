@@ -1,5 +1,5 @@
 # DPGSmartWidgets
-Limited OO-bindings for DearPyGui
+Limited OO-bindings for DearPyGui (https://github.com/hoffstadt/DearPyGui)
 
 ## Usage
 
