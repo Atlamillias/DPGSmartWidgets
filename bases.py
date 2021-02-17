@@ -4,7 +4,7 @@ from typing import Any, Callable
 
 
 class SmartObject:
-    _base_func = None
+    _func = None
 
     def __init__(self, name: str):
         self.__properties = [prop for prop, value in self.__class__.__dict__.items() if isinstance(value, SmartProperty)]
@@ -19,7 +19,7 @@ class SmartObject:
         self.__dict__[key] = value
 
     def __enter__(self):
-        self._base_func(
+        self._func(
             name=self.name,
             **self.properties()
         )
@@ -33,7 +33,7 @@ class SmartObject:
         return str(self.name)
 
     def add(self):
-        self._base_func(
+        self._func(
             name=self.name,
             **self.properties()
         )
