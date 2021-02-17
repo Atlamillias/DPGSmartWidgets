@@ -1,6 +1,9 @@
 from dearpygui.core import *
-from dearpygui.simple import show_about, show_debug, show_metrics, show_style_editor
-from typing import Any, Callable
+
+__all__ = [
+    "SmartObject",
+    "SmartProperty"
+]
 
 
 class SmartObject:
