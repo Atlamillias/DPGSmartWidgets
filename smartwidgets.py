@@ -332,6 +332,7 @@ class Table(SmartObject):
     def __exit__(self, exc_type, exc_val, exc_tb):
         pass
 
+    # Placeholders
     def add_headers(self):
         pass
 
@@ -371,13 +372,3 @@ class Table(SmartObject):
     def clear(self):
         """Wrapper for core.clear_table"""
         return clear_table(self.name)
-
-
-if __name__ == "__main__":
-    test = Window("test")
-
-    with test:
-        pass
-
-    start_dearpygui()
-    
