@@ -1,7 +1,23 @@
 from dearpygui.core import *
 from dearpygui.simple import show_about, show_debug, show_metrics, show_style_editor
-from typing import Any, Callable
+from typing import Any, Callable, Union
 from bases import SmartObject, SmartProperty
+
+__all__ = [
+    "Window",
+    "Child",
+    "Group",
+    "MenuBar",
+    "Menu",
+    "TabBar",
+    "Tab",
+    "Group",
+    "Popup",
+    "Tooltip",
+    "Tree",
+    "ManagedColumns",
+    "Table"
+]
 
 
 class Window(SmartObject):
@@ -86,8 +102,8 @@ class Child(SmartObject):
     horizontal_scrollbar = SmartProperty()
     menubar = SmartProperty()
 
-    def __init__(self, name: str, *, show: bool = True, tip: str = None, parent: str or SmartObject = None,
-                 before: str or SmartObject = None,
+    def __init__(self, name: str, *, show: bool = True, tip: str = None, parent: Union[str, SmartObject] = None,
+                 before: Union[str, SmartObject] = None,
                  width: int = None, height: int = None, border: bool = False, autosize_x: bool = False,
                  autosize_y: bool = False, no_scrollbar: bool = False, horizontal_scrollbar: bool = False,
                  menubar: bool = False):
@@ -117,8 +133,8 @@ class Group(SmartObject):
     horizontal = SmartProperty()
     horizontal_spacing = SmartProperty()
 
-    def __init__(self, name: str, *, show: bool = True, tip: str = None, parent: str or SmartObject = None,
-                 before: str or SmartObject = None, width: int = None, horizontal: bool = False,
+    def __init__(self, name: str, *, show: bool = True, tip: str = None, parent: Union[str, SmartObject] = None,
+                 before: Union[str, SmartObject] = None, width: int = None, horizontal: bool = False,
                  horizontal_spacing: float = None):
         super().__init__(name)
 
@@ -137,7 +153,7 @@ class MenuBar(SmartObject):
     parent = SmartProperty()
     before = SmartProperty()
 
-    def __init__(self, name: str, *, show: bool = True, parent: str or SmartObject = None, before: str or SmartObject = None):
+    def __init__(self, name: str, *, show: bool = True, parent: Union[str, SmartObject] = None, before: Union[str, SmartObject] = None):
         super().__init__(name)
 
         self.show = show
@@ -153,7 +169,7 @@ class Menu(SmartObject):
     before = SmartProperty()
     enabled = SmartProperty()
 
-    def __init__(self, name: str, *, label: str = None, show: bool = True, parent: str or SmartObject = None, before: str or SmartObject = None, enabled: bool = True):
+    def __init__(self, name: str, *, label: str = None, show: bool = True, parent: Union[str, SmartObject] = None, before: Union[str, SmartObject] = None, enabled: bool = True):
         super().__init__(name)
 
         self.label = label or self.name
@@ -173,7 +189,7 @@ class TabBar(SmartObject):
     before = SmartProperty()
 
     def __init__(self, name: str, *, reorderable: bool = False, callback: Callable = None,
-                 callback_data: Any = None, show: bool = True, parent: str or SmartObject = None, before: str or SmartObject = None):
+                 callback_data: Any = None, show: bool = True, parent: Union[str, SmartObject] = None, before: Union[str, SmartObject] = None):
         super().__init__(name)
 
         self.reorderable = reorderable
@@ -199,7 +215,7 @@ class Tab(SmartObject):
 
     def __init__(self, name: str, *, closable: bool = False, label: str = None, show: bool = True,
                  no_reorder: bool = False, leading: bool = False, trailing: bool = False,
-                 no_tooltip: bool = False, tip: str = None, parent: str or SmartObject = None, before: str or SmartObject = None):
+                 no_tooltip: bool = False, tip: str = None, parent: Union[str, SmartObject] = None, before: Union[str, SmartObject] = None):
         super().__init__(name)
 
         self.closable = closable
@@ -225,8 +241,8 @@ class Popup(SmartObject):
     height = SmartProperty()
     show = SmartProperty()
 
-    def __init__(self, name: str, popupparent: str or SmartObject, *, mousebutton: int = None, modal: bool = False,
-                 parent: str or SmartObject = None, before: str or SmartObject = None, width: int = None, height: int = None,
+    def __init__(self, name: str, popupparent: Union[str, SmartObject], *, mousebutton: int = None, modal: bool = False,
+                 parent: Union[str, SmartObject] = None, before: Union[str, SmartObject] = None, width: int = None, height: int = None,
                  show: bool = True):
         super().__init__(self, name)
 
@@ -247,7 +263,7 @@ class Tooltip(SmartObject):
     before = SmartProperty()
     show = SmartProperty()
 
-    def __init__(self, name: str, tipparent: str or SmartObject, *, parent: str or SmartObject = None, before: str or SmartObject = None, show: bool = True):
+    def __init__(self, name: str, tipparent: Union[str, SmartObject], *, parent: Union[str, SmartObject] = None, before: Union[str, SmartObject] = None, show: bool = True):
         super().__init__(name)
 
         self.tipparent = tipparent
@@ -270,7 +286,7 @@ class Tree(SmartObject):
     bullet = SmartProperty()
 
     def __init__(self, name: str, *, label: str = None, show: bool = True, tip: str = None,
-                 parent: str or SmartObject = None, before: str or SmartObject = None, default_open: bool = False,
+                 parent: Union[str, SmartObject] = None, before: Union[str, SmartObject] = None, default_open: bool = False,
                  open_on_double_click: bool = False, open_on_arrow: bool = False, leaf: bool = False,
                  bullet: bool = False):
         super().__init__(name)
@@ -296,7 +312,7 @@ class ManagedColumns(SmartObject):
     before = SmartProperty()
 
     def __init__(self, name: str, columns: int, *, border: bool = False, show: bool = True,
-                 parent: str or SmartObject = None, before: str or SmartObject = None):
+                 parent: Union[str, SmartObject] = None, before: Union[str, SmartObject] = None):
         super().__init__(name)
 
         self.columns = columns
@@ -316,7 +332,7 @@ class Table(SmartObject):
     show = SmartProperty()
 
     def __init__(self, name: str, headers: list = None, *, callback: Callable = None,
-                 callback_data: Any = None, parent: str or SmartObject = None, before: str or SmartObject = None,
+                 callback_data: Any = None, parent: Union[str, SmartObject] = None, before: Union[str, SmartObject] = None,
                  width: int = None, height: int = None, show: bool = True):
         super().__init__(name)
 
