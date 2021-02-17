@@ -5,7 +5,7 @@ from bases import SmartObject, SmartProperty
 
 
 class Window(SmartObject):
-    _base_func = add_window
+    _func = add_window
     width = SmartProperty()
     height = SmartProperty()
     x_pos = SmartProperty()
@@ -72,7 +72,7 @@ class Window(SmartObject):
 
 
 class Child(SmartObject):
-    _base_func = add_child
+    _func = add_child
     show = SmartProperty()
     tip = SmartProperty()
     parent = SmartProperty()
@@ -108,7 +108,7 @@ class Child(SmartObject):
 
 
 class Group(SmartObject):
-    _base_func = add_group
+    _func = add_group
     show = SmartProperty()
     tip = SmartProperty()
     parent = SmartProperty()
@@ -132,7 +132,7 @@ class Group(SmartObject):
 
 
 class MenuBar(SmartObject):
-    _base_func = add_menu_bar
+    _func = add_menu_bar
     show = SmartProperty()
     parent = SmartProperty()
     before = SmartProperty()
@@ -146,7 +146,7 @@ class MenuBar(SmartObject):
 
 
 class Menu(SmartObject):
-    _base_func = add_menu
+    _func = add_menu
     label = SmartProperty()
     show = SmartProperty()
     parent = SmartProperty()
@@ -164,7 +164,7 @@ class Menu(SmartObject):
 
 
 class TabBar(SmartObject):
-    _base_func = add_tab_bar
+    _func = add_tab_bar
     reorderable = SmartProperty()
     callback = SmartProperty()
     callback_data = SmartProperty()
@@ -185,7 +185,7 @@ class TabBar(SmartObject):
 
 
 class Tab(SmartObject):
-    _base_func = add_tab
+    _func = add_tab
     closable = SmartProperty()
     label = SmartProperty()
     show = SmartProperty()
@@ -215,7 +215,7 @@ class Tab(SmartObject):
 
 
 class Popup(SmartObject):
-    _base_func = add_popup
+    _func = add_popup
     popupparent = SmartProperty()
     mousebutton = SmartProperty()
     modal = SmartProperty()
@@ -241,7 +241,7 @@ class Popup(SmartObject):
 
 
 class Tooltip(SmartObject):
-    _base_func = add_tooltip
+    _func = add_tooltip
     tipparent = SmartProperty()
     parent = SmartProperty()
     before = SmartProperty()
@@ -257,7 +257,7 @@ class Tooltip(SmartObject):
 
 
 class Tree(SmartObject):
-    _base_func = add_tree_node
+    _func = add_tree_node
     label = SmartProperty()
     show = SmartProperty()
     tip = SmartProperty()
@@ -288,7 +288,7 @@ class Tree(SmartObject):
 
 
 class ManagedColumns(SmartObject):
-    _base_func = add_managed_columns
+    _func = add_managed_columns
     columns = SmartProperty()
     border = SmartProperty()
     show = SmartProperty()
@@ -307,7 +307,7 @@ class ManagedColumns(SmartObject):
 
 
 class Table(SmartObject):
-    _base_func = add_table
+    _func = add_table
     headers = SmartProperty()
     parent = SmartProperty()
     before = SmartProperty()
@@ -380,3 +380,4 @@ if __name__ == "__main__":
         pass
 
     start_dearpygui()
+    
