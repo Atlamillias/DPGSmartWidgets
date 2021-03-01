@@ -23,7 +23,7 @@ None
 - **MenuBar** class now has a **height** property. Useful when programatically positioning widgets when you want them to avoid overlapping the menu bar.
 - **keep_pos_on_config** parameter added to **Window** (**True** by default). If **False**, the widget will return to it's original position (on creation) when **Window.configure** is called.
 - **SmartContainer** added to **bases.py** (subclass of **SmartObject**)
-  -  new methods **children**,.
+  - new **children** method.
 - Added **NodeEditor** and **NodeAttribute** classes in **smartwidgets.py**.
 
 ### Fixed
