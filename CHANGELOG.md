@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+None
+
 ## 0.2.0 - 2019-02-15
 
 ### Changed
