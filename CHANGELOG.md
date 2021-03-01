@@ -3,8 +3,12 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+## Added
+- **widgets.py** for upcomming widget classes (button, etc).
 
-None
+### Changed
+- **smartwidgets.py** has been renamed to **containers.py**.
+- **Table** class moved to **widgets.py**.
 
 ## 0.2.0 - 2019-02-15
 
