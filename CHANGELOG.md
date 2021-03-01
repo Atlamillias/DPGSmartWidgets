@@ -12,3 +12,4 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 
 - **SmartObject** now checks for **SmartProperty**'s via **type** instead of **isinstance**. Attributes that are subclass instances of **SmartProperty** are no longer sent as arguments to the assigned **dearpygui.core** function.
+- Passing the number 0 for **Window** attributes **x/y_pos** now works as intended. The new default value for these attributes has also been changed from 200 to 0.
