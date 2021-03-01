@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 0.2.0 - 2019-02-15
+
 ### Changed
 - "Container" widgets now subclass **SmartContainer** instead of **SmartObject**.
 - Original **SmartProperty** class renamed to **SmartConfigProperty**. **SmartProperty** now subclasses **SmartConfigProperty**.
