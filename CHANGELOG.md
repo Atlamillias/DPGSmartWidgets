@@ -13,9 +13,10 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - **name** attribute is now optional for many classes in **smartwidgets.py**.
 - **keyword-only** removed from many classes in **smartwidgets.py**.
+- Default values for **Window.x/y_pos** changed from 200 to 0.
 
 ### Fixed
 - **SmartObject** now checks for **SmartProperty**'s via **type** instead of **isinstance**. Attributes that are subclass instances of **SmartProperty** are no longer sent as arguments to the assigned **dearpygui.core** function.
-- Passing the number 0 for **Window** attributes **x/y_pos** now works as intended. The new default value for these attributes has also been changed from 200 to 0.
+- Passing the number 0 for **Window** attributes **x/y_pos** now works as intended instead of using the default value (was previously 200).
 - Type hints that used **or** now use **Union**.
 - **Window.configure** now works properly when controlling **x/y_pos**.
