@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - **smartwidgets.py** has been renamed to **containers.py**.
+- **SmartObject.properties** method has been renamed to **configuration**.
 - **Table** class moved to **widgets.py**.
 - Removed fetching/storing values in value storage using dearpygui.core.get/set_value. The widget is now directly configured only via **core.configure_item**. This means that it won't be possible to control a widgets properties via string "widget.attribute" anymore.
 
